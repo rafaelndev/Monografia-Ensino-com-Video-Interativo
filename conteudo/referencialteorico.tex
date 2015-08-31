@@ -20,7 +20,7 @@ O conceito de distância em EaD deve ser entendida como uma separação espacial
 \par
 O conceito de curso e de aula também é um pouco diferente do que entendemos hoje, de uma aula com espaço e tempo determinados, com a internet por exemplo, esse tempo e espaço fica cada vez mais flexível. Esse processo é descrito por \citeonline[p.~2]{moran-ead} em seu artigo:
 \begin{citacao}
-  "O professor continuará "dando aula", e enriquecerá esse processo com as possibilidades que as tecnologias interativas proporcionam: para receber e responder mensagens dos alunos, criar listas de discussão e alimentar continuamente os debates e pesquisas com textos, páginas da internet, até mesmo foram do horário específico da aula."
+  O professor continuará "dando aula", e enriquecerá esse processo com as possibilidades que as tecnologias interativas proporcionam: para receber e responder mensagens dos alunos, criar listas de discussão e alimentar continuamente os debates e pesquisas com textos, páginas da internet, até mesmo foram do horário específico da aula.
 \end{citacao}
 \par
 Dessa forma o Ensino a Distância também pode ser usado como um complemento a uma aula presencial tradicional, enriquecendo-a.
@@ -37,7 +37,7 @@ O \textit{e-learning} também pode ser definido como um método de ensino a dist
 \par
 \cite[p.~3]{barbosa} descreve as necessidades de um sistema de \textit{e-Learning}:
 \begin{citacao}
-  "Para que seja possível uma aula/formação, com o modelo de e-Learning, é necessário que o e-tutor disponibilize os e-conteúdos (ou recursos didácticos dos cursos), bem como as interacções com os e-alunos. Para isso, há o acesso à plataforma, através de uma password cedida pelo formador ou entidade. Através dessa password, o e-alunos, tem acesso a toda informação, que inclui normalmente textos, imagens e animações."
+  Para que seja possível uma aula/formação, com o modelo de e-Learning, é necessário que o e-tutor disponibilize os e-conteúdos (ou recursos didácticos dos cursos), bem como as interacções com os e-alunos. Para isso, há o acesso à plataforma, através de uma password cedida pelo formador ou entidade. Através dessa password, o e-alunos, tem acesso a toda informação, que inclui normalmente textos, imagens e animações.
 \end{citacao}
 \Idem{barbosa} complementa o pensamento com uma imagem que mostra o processo do \textit{e-Learning}.
 
@@ -129,17 +129,17 @@ Segundo \citeonline[p.~24]{fernandes-scorm}, uma das grandes características do
 \par
 A especificação do \ac{SCORM} está dividido em 4 documentos, chamados de livros pela \cite{adl}, são eles:
 \begin{enumerate}
-  \item \textbf{\textit{The Scorm Overview}}: Descreve o \ac{SCORM} em geral, defindo seus conceitos sobre o modelo.
+  \item \textbf{\textit{The Scorm Overview}}: Descreve o \ac{SCORM} em geral, definindo seus conceitos sobre o modelo.
   \item \textbf{\textit{The SCORM content Aggregation Model (CAM)}}: Descreve os componentes usados em uma interação de aprendizagem, mostrando como empacotar os cursos e realizar a migração entre os ambientes de aprendizagem, descreve também os metadados que precisam ser usados na descrição do objeto de aprendizagem.
-  \item \textbf{\textit{The SCORM Run-Time Enviroment (RTE)}}: Trata da execução dos objectos criados no modelo \ac{SCORM}, por exemplo, como é feita a comunicação do objeto com o ambiente de aprendizagem.
+  \item \textbf{\textit{The SCORM Run-Time Enviroment (RTE)}}: Trata da execução dos objetos criados no modelo \ac{SCORM}, por exemplo, como é feita a comunicação do objeto com o ambiente de aprendizagem.
   \item \textbf{\textit{The SCORM Sequencing and Navigation (SN)}}: Trata do navegação do conteúdo do objeto de aprendizagem, descrevendo como deve ser feita a navegação atravès do conteúdo do objeto construído.
 \end{enumerate}
 
 \begin{figure}[h]
   \centering
   \label{fig:scorm-funcionamento-dutra}
-  \includegraphics[keepaspectratio=true,scale=0.6]{figuras/scorm-funcionamento-dutra.png}
-  \caption{SCORM como conjunto de especificações \citeonline{dutra-scorm-ims}}
+  \includegraphics[keepaspectratio=true,scale=0.7]{figuras/scorm-funcionamento-dutra.png}
+  \caption{SCORM como conjunto de especificações. Fonte: \citeonline{dutra-scorm-ims}}.
 \end{figure}
 \par
 O pacote \ac{SCORM} gerado tem como resultado um arquivo \textit{ZIP}, esse arquivo contem o conteúdo do curso, e também deve possuir todos os arquivos \textit{HTML}, \textit{Javascript}, imagens e animações, além de um arquivo de manifesto chamado \textit{imsmanifest.xml}. Este arquivo descreve a estrutura lógica do conteúdo como a navegação das páginas e a organização de todo conteúdo. O \ac{LMS} carrega esse pacote e então cria o relacionamento entre as unidades (Pacote \textit{SCORM} e o \textit{LMS}). \cite[p.~39]{fernandes-scorm}.
@@ -147,4 +147,36 @@ O pacote \ac{SCORM} gerado tem como resultado um arquivo \textit{ZIP}, esse arqu
 Como o \textit{SCORM} e distríbuido como um pacote \textit{ZIP}, permite que os seus conteúdos resistam a evolução tecnológica, com custo baixo de reconfiguração, esse pacote pode ser reaproveitado em \textit{LMS} compatíveis com seu funcionamento inalterado.
 
 \subsubsection{\textit{LTI (Learning Tool Interoperability)}}
-Teste overleaf
+O \textit{LTI} foi criado pela \textit{IMS}, a primeira versão TI 1.0 foi lançado em 2006 mais na epoca foi considerado muito complexo, e não teve uma boa adoção. O projeto do \textit{Learning Tools Interoperability} foi desenvolvido com os mesmos objetivos do TI, mais com uma solução mais simples. \cite{ims}
+\par
+A versão atual do \textit{LTI} é a 1.1, que suporta dados de retorno ao \textit{LMS} como as notas que ao aluno atingiu no curso.
+\par
+\begin{citacao}
+  O \textit{LTI} tem a habilidade de fornecer á um usuário em um \textit{LMS} (Ou outro sistema \textit{web} com suporte ao padrão) de acessar uma aplicação de aprendizagem separada, um item de conteúdo protegido ou outro recurso restrito. \cite[p.~2, tradução nossa]{vickers-ims}
+\end{citacao}
+\par
+Quando um usuário que está em um \textit{LMS} para um sistema com suporte ao \textit{LTI} alguns dados são enviados juntos a ele:
+\begin{itemize}
+    \item Detalhes sobre ele (como nome e email);
+    \item Detalhes sobre o contexto institucional (como o nome do \textit{LMS que está sendo usado, nome da faculdade});
+    \item Detalhes do contexto de onde o usuário está vindo (como o curso especificado);
+    \item A sua função no \textit{LMS} (como professor ou aluno);
+\end{itemize}
+Esses dados são fornecidos pelo próprio \textit{LMS}, no seu lançamento.
+\par
+O lançamento do sistema externo ocorre de maneira segura (usando \textit{OAuth}) pelo navegador do usuário. Uma conexão e criada entre esses dois sistemas por meio de autenticação, as únicas informações que o \textit{LMS} precisa sobre o sistema externo são:
+\begin{itemize}
+    \item A \ac{URL} do sistema;
+    \item Uma chave para identificar o cliente (chamada de \textit{"consumer key"} ou chave do cliente);
+    \item Uma outra chave secreta para proteger a conexão;
+\end{itemize}
+\par
+Segundo \citeonline[p.~2]{vickers-ims} o sistema de Gestão de Aprendizagem (\textit{LMS}), na especificação do \textit{LTI}, é chamado de \ac{TC} em português seria algo como "Consumidor da Ferramenta", que é o sistema que irá "consumir" a outra aplicação ou recurso, que e provido pelo \ac{TP} em português "Provedor da Ferramenta".
+\par
+Um \textit{TP} pode ser tanto um \textit{LMS} como um portal empresarial, ou qualquer sistema que suporte a implementação do \textit{LTI}. É um \textit{TC}, pode ser um \textit{Wiki} (Um site de edição coletiva) ou uma ferramenta de questionários por exemplo.
+\begin{figure}[h]
+    \centering
+    \label{fig:ims-lti-funcionamento}
+    \includegraphics[keepaspectratio=true,scale=0.5]{figuras/ims-lti-funcionamento.png}
+    \caption{Funcionamento do \textit{LTI}. Fonte: \citeonline{ims}}
+\end{figure}
