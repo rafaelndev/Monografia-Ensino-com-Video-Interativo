@@ -1,4 +1,4 @@
-\chapter[Referencial Teórico]{Referencial Teórico}
+\chapter[REFERENCIAL TEÓRICO]{Referencial Teórico}
 
 \section{USO DAS TECNOLOGIAS NA EDUCAÇÃO}
 
@@ -186,3 +186,42 @@ Quando um usuário clica em um link referente à um \textit{TP}, a plataforma de
 Quando \textit{tool provider} recebe a requisição, ele então usa a chave \textit{shared secret} para decifrar a informação e assegurar que a requisição é de um \textit{LMS}. O \textit{tool provider} usa também outras informações na requisição para mostrar a aplicação com as configurações corretas para o usuário e seu contexto (como uma ligação entre o curso e a aplicação).
 \par
 Uma requisição de lançamento LTI (\textit{LTI launch}) é um \textit{POST} \ac{HTTP} enviado pela plataforma de aprendizagem com uma \textit{array} de elementos escondidos do form (\textit{hidden form elements}). Quando o \textit{TP} recebe a requisição, ele valida a informação, cria a conta de usuário (se necessário) e a ligação com o curso, e então cria uma sessão e redireciona o navegador do usuário para a página da ferramenta.
+
+\chapter{TECNOLOGIAS UTILIZADAS NO SISTEMA}
+
+Para que a Ferramenta fosse desenvolvida, foi realizado um estudo das ferramentas que melhor atenderiam esse processo. A escolha foi baseada principalmente priorizando as tecnologias que já se tinha conhecimento, e também na facilidade de uso.
+
+\section{PHP}
+
+Atualmente a abreviação \textit{PHP} vem de \textit{"Hypertext Preprocessor}, é uma linguagem de programação de código aberto muito usada para \textit{scripts} que são usados juntamente á um servidor web para servir páginas \textit{HTML}.
+\par
+A linguagem de programação PHP foi criada em 1994 por Rasmus Lerdorf, no inicio era formada por um conjunto de scripts voltados à criação de páginas dinâmicas, em que Rasmus usava para monitorar o acesso ao seu currículo na internet, mais a medida que a ferramenta foi crescendo em suas funcionalidades, Rasmus teve de escrever uma implementação em C, permitindo que as pessoas desenvolvessem de forma mais simples suas aplicações web, e então a chamou de PHP/FI (\textit{Personal Home Pages/Forms Interpreter}) e disponibilizou seu código em 1995 neste momento o \textit{PHP} começou a ser um projeto comunitário desenvolvido por uma equipe de colaboradores. \cite[p.~20]{pablo-php}.
+\par
+\begin{listing}
+    \begin{phpcode}
+    <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+    "http://www.w3.org/TR/html4/loose.dtd">
+    <html>
+        <head>
+            <title>Exemplo</title>
+        </head>
+        <body>
+    
+        <?php
+            echo "Olá, eu sou um script PHP!";
+        ?>
+    
+        </body>
+    </html>
+    \end{phpcode}
+    \caption{Código simples de PHP retirado do site http//php.net:}
+    \label{lst:php_example_1}
+\end{listing}
+\par
+Os paginas \textit{PHP} contém \textit{HTML} com código embutido executando alguma ação como no exemplo acima \ref{lst:php_example_1}, o resultado será "Olá, eu sou um script PHP!".
+\par
+O código \textit{PHP} é delimitado pelas instruções de processamento (\textit{tags}) de início e fim \textit{<?php e ?>} que permitem que você escreva o código dentro e fora do \textit{PHP} no mesmo arquivo \textit{HTML}. \cite{php-intro}
+\par
+O \textit{PHP} e executado no lado do servidor (server-side), gerando um \textit{HTML} que é enviado para o cliente que recebe os resultados da execução desse \textit{script}, mais não tem acesso ao seu código fonte. Na página do Manual do \textit{PHP} diz o seguinte: "A melhor coisa em usar o PHP é que ele é extremamente simples para um iniciante, mais oferece muitos recursos para um programador profissional" \Idem{php-intro}. A simplicidade do \textit{PHP} é uma das suas melhores qualidades que a mantêm entre as 3 linguagens mais usadas como mostra o infográfico da \citeonline{iinterativa}.
+\par
+O \textit{PHP} também pode ser utilizado na maioria dos sistemas operacionais, incluindo \textit{Linux}, \textit{Solaris}, \textit{OpenBSD}, \textit{Microsoft Windows}, Mac OS X. Também é suportado pela maioria dos servidores web atualmente, como o \textit{Apache}, \textit{IIS}, \textit{Nginx} e \textit{lighttpd}, dando assim uma liberdade de escolha do sistema operacional e do servidor web. O \textit{PHP} também oferece suporte para uma ampla variedade de banco de dados\footnote{Extensões de Banco de Dados \url{http://php.net/manual/pt_BR/refs.database.php}}.
