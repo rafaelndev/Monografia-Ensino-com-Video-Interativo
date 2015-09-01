@@ -168,7 +168,7 @@ O lançamento do sistema externo ocorre de maneira segura (usando \textit{OAuth}
 \begin{itemize}
     \item A \ac{URL} do sistema;
     \item Uma chave para identificar o cliente (chamada de \textit{"consumer key"} ou chave do cliente);
-    \item Uma outra chave secreta para proteger a conexão;
+    \item Uma outra chave secreta para proteger a conexão(chamada de \textit{shared secret});
 \end{itemize}
 \par
 Segundo \citeonline[p.~2]{vickers-ims} o sistema de Gestão de Aprendizagem (\textit{LMS}), na especificação do \textit{LTI}, é chamado de \ac{TC} em português seria algo como "Consumidor da Ferramenta", que é o sistema que irá "consumir" a outra aplicação ou recurso, que e provido pelo \ac{TP} em português "Provedor da Ferramenta".
@@ -180,3 +180,9 @@ Um \textit{TP} pode ser tanto um \textit{LMS} como um portal empresarial, ou qua
     \includegraphics[keepaspectratio=true,scale=0.5]{figuras/ims-lti-funcionamento.png}
     \caption{Funcionamento do \textit{LTI}. Fonte: \citeonline{ims}}
 \end{figure}
+\par
+Quando um usuário clica em um link referente à um \textit{TP}, a plataforma de aprendizagem envia junto com os dados um assinatura \textit{OAuth}. \textit{OAuth} é um protocolo aberto que permite a autorização segura em um método simples e padronizado em aplicações \textit{web}, \textit{desktop} e móveis, \cite{oauth}, permitindo que o \textit{TP} confie que a informação na requisição de lançamento é de um \textit{TC}.
+\par
+Quando \textit{tool provider} recebe a requisição, ele então usa a chave \textit{shared secret} para decifrar a informação e assegurar que a requisição é de um \textit{LMS}. O \textit{tool provider} usa também outras informações na requisição para mostrar a aplicação com as configurações corretas para o usuário e seu contexto (como uma ligação entre o curso e a aplicação).
+\par
+Uma requisição de lançamento LTI (\textit{LTI launch}) é um \textit{POST} \ac{HTTP} enviado pela plataforma de aprendizagem com uma \textit{array} de elementos escondidos do form (\textit{hidden form elements}). Quando o \textit{TP} recebe a requisição, ele valida a informação, cria a conta de usuário (se necessário) e a ligação com o curso, e então cria uma sessão e redireciona o navegador do usuário para a página da ferramenta.
