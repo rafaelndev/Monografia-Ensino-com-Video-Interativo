@@ -229,13 +229,30 @@ O \textit{PHP} também pode ser utilizado na maioria dos sistemas operacionais, 
 
 \section{APACHE}
 
-\begin{tabular}{|c|c|c|c|c|c|}
-    \hline Developer & July 2015 & Percent & August 2015 & Percent & Change \\ 
-    \hline Apache & 325,696,514 & 38.34\% & 327,985,968 & 37.51\% & -0.83 \\ 
-    \hline Microsoft & 225,282,713 & 26.52\% & 231,429,146 & 26.47\% & -0.05 \\ 
-    \hline nginx & 131,460,063 & 15.47\% & 132,443,391 & 15.15\% & -0.33 \\ 
-    \hline Google & 20,255,424 & 2.38\% & 19,933,095 & 2.28\% & -0.10 \\ 
-\end{tabular} 
+Um servidor \textit{WEB} e responsável de aceitar requisições \textit{HTTP} dos clientes \textit{web} e servi-los com respostas \textit{HTTP} geralmente na forma de paginas com conteúdo estático como texto e imagens, e conteúdos dinâmicos como \textit{scripts} \cite[p.~15]{igor}.
+\par
+Em 1995 Robert McCool desenvolvedor da \ac{NCSA} criou um servidor \textit{Web} chamado \textit{NCSA HTTPd} que se tornou o mais utilizao na época, por problemas de comunicação e gerenciamento dos \textit{patchs} do servidor, foi então criado o \textit{Apache Group}, que usou o código do \textit{NCSA Web Server} e criou um novo servidor chamado \textit{Apache}. \cite[p.~36]{kabir}.
+\par
+A importância principal do \textit{Apache} para o projeto, é o seu suporte completo ao \textit{PHP}. O \textit{Apache} também é um servidor simples e totalmente configurável por meio de um arquivo,  chamado \textit{httpd.conf} que pode ser aberto em qualquer editor de texto, outros fatores importantes descritos por \cite[p.~38]{kabir}, que são relevantes para o projeto são:
+\begin{itemize}
+    \item Suporte ao protocolo HTTP 1.1 e atualmente suporte ao novo HTTP 2, por meio de um modulo chamado mod\_h2 \footnote{\url{https://github.com/icing/mod_h2}}.
+    \item Suporte a \textit{Virtual Host} que é a capacidade de hospedar mais do que um site em uma única máquina.
+    \item Suporte a \textit{.htaccess} que são arquivos que permitem realizar mudanças nas configurações por diretórios, sem precisar editar o \textit{httpd.conf} novamente.
+\end{itemize}
+\par
+O \textit{Apache} é também o servidor \textit{web} mais utilizado no mundo, segundo a pesquisa do \citeonline{netcraft-survey} mostrado na tabela \ref{tbl:netcraft}.
+
+\begin{table}[h!]
+    \begin{tabular}{|c|c|c|c|c|c|}
+        \hline \textbf{Developer} & \textbf{July 2015} & \textbf{Percent} & \textbf{August 2015} & \textbf{Percent} & \textbf{Change} \\ 
+        \hline Apache & 325,696,514 & 38.34\% & 327,985,968 & 37.51\% & -0.83 \\ 
+        \hline Microsoft & 225,282,713 & 26.52\% & 231,429,146 & 26.47\% & -0.05 \\ 
+        \hline nginx & 131,460,063 & 15.47\% & 132,443,391 & 15.15\% & -0.33 \\ 
+        \hline Google & 20,255,424 & 2.38\% & 19,933,095 & 2.28\% & -0.10 \\ 
+    \end{tabular}
+    \caption{Tabela com as estatísticas de uso dos servidores web pela netcraft em Agosto de 2015}.
+    \label{tbl:netcraft}
+\end{table}
 
 \section{MYSQL}
 
