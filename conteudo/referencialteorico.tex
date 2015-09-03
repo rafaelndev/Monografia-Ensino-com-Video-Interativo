@@ -226,7 +226,6 @@ O \textit{PHP} e executado no lado do servidor (server-side), gerando um \textit
 \par
 O \textit{PHP} também pode ser utilizado na maioria dos sistemas operacionais, incluindo \textit{Linux}, \textit{Solaris}, \textit{OpenBSD}, \textit{Microsoft Windows}, Mac OS X. Também é suportado pela maioria dos servidores web atualmente, como o \textit{Apache}, \textit{IIS}, \textit{Nginx} e \textit{lighttpd}, dando assim uma liberdade de escolha do sistema operacional e do servidor web. O \textit{PHP} também oferece suporte para uma ampla variedade de banco de dados\footnote{Extensões de Banco de Dados \url{http://php.net/manual/pt_BR/refs.database.php}}.
 
-\subsection{LARAVEL}
 
 \section{APACHE}
 
@@ -242,6 +241,49 @@ O \textit{PHP} também pode ser utilizado na maioria dos sistemas operacionais, 
 
 \section{JAVASCRIPT}
 
+\section{CSS}
+
+\section{\textit{FRAMEWORKS} E BIBLIOTECAS}
+
+\subsection{\textit{LARAVEL}}
+O \textit{Laravel} é um \textit{framework PHP} de código aberto, criado por Taylor Otwell, para o desenvolvimento de aplicações \textit{WEB}, seguindo o padrão arquitetural \ac{MVC}.
+\par
+O motivo da escolha do \textit{framework laravel} para o projeto, são algumas características que simplificam o desenvolvimento, e permitem uma melhor modularizarão do código, como por exemplo essas listadas por \citeonline[p.~24]{bean-laravel}:
+\begin{itemize}
+  \item \textbf{Roteamento}: O \textit{Laravel} fornece muita flexilidade na definição de rotas da aplicação. É possivel por exemplo, ligar todas as ações do \textit{controller} para suas rotas, como na rota "cursos/create" (\textit{CursosController}, ação \textit{create}), ou criar rotas de \ac{REST} (\textit{GET}, \textit{POST}, \textit{PUT} ou \textit{DELETE}).
+  \item \textbf{\textit{Query Builder} e \ac{ORM}}: O \textit{framework} também fornece um \textit{query builder} (construtor de consultas) chamado de \textit{Eloquent}, que permite criar consultas do banco de dados utilizando a \textit{syntax} do \textit{PHP}, permitindo um agrupamento de métodos em vez de escrever \ac{SQL}.
+  
+  Por exemplo, a seguinte consulta do \textit{SQL}:
+  \begin{listing}
+    \begin{sqlcode}
+      SELECT * FROM cursos c where user_id = 1
+      JOIN m markers as m.curso_id = c.id
+      ORDER BY c.created_at
+      LIMIT 10
+    \end{sqlcode}
+    \caption{Busca simples do SQL. Buscar todos os cursos em que o user\_id seja igual a 1, unir os resultados com a tabela markers, ordenar pela data de criação do curso, e limitar os resultados por 10}
+    \label{lst:sql_example_eloquent}
+  \end{listing}
+  \par
+  Pode ser escrita dessa forma usando o \textit{Eloquent}:
+  \begin{listing}
+    \begin{phpcode}
+      <?php
+      App\Curso::with("markers") // Buscar da tabela cursos com a tabela markers
+      ->where("user_id", 1) // Somente se o user_id == 1
+      ->orderBy("created_at") // Ordenar pela data de criação dos cursos
+      ->take(10) // Limitar os resultados por 10
+      ->get(); // Executar a consulta
+      ?>
+    \end{phpcode}
+    \caption{Consulta \ref{lst:sql_example_eloquent} em Eloquent}
+    \label{lst:php_example_eloquent}
+  \end{listing}
+  \par
+  \item \textbf{Sistema de \textit{Templates}}: O \textit{Laravel} fornece um sistema de \textit{template} chamado de \textit{Blade}, que permite a criação de \textit{layouts} hierárquicos.
+  \item \textbf{Elixir}\footnote{\url{http://laravel.com/docs/5.1/elixir}}: O \textit{Elixir} é uma \ac{API} que facilita o uso das tarefas do \textit{Gulp}.
+\end{itemize}
+
 \subsection{JQUERY}
 
 \subsection{VUE.JS}
@@ -253,7 +295,5 @@ O \textit{PHP} também pode ser utilizado na maioria dos sistemas operacionais, 
 \subsection{GULP}
 
 \subsection{VIDEO.JS}
-
-\section{CSS}
 
 \subsection{MATERIALIZECSS}
