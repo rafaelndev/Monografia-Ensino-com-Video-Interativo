@@ -256,9 +256,22 @@ O \textit{Apache} é também o servidor \textit{web} mais utilizado no mundo, se
 
 \section{MYSQL}
 
-\section{JAVASCRIPT}
+Segundo \citeonline[p.~38]{mysql-reference}, O \textit{MySQL} é um sistema de gerenciamento de banco de dados relacional \textit{SQL Opem Source}, desenvolvido pela \textit{MySQL AB} uma empresa Sueca fundada por David Axmark, Allan Larsson e Michael Widenius.
+\par
+Em janeiro de 2008, a empresa \textit{MySQL AB}, foi adquirida pela \textit{Sun Microsystems}, por US\$ 1 bilhão\footnote{\url{http://www.zdnet.com/article/sun-acquires-mysql-adds-to-its-software-stack/}}. E em abril de 2009 a \textit{Oracle} comprou a \textit{Sun Microsystems} e todos os seus produtos\footnote{\url{http://www.oracle.com/us/corporate/press/018363}}.
+\par
+Assim como o PHP, o \textit{MySQL} é um \textit{software} de código aberto, possuindo dois tipos de licença: a licença para uso Livre \ac{GPL}, sem custos, e a licença comercial, necessária para usar o \textit{MySQL} em aplicações comerciais.
+\par
+\citeonline[p.~38]{kofler} e \citeonline[p.~40]{mysql-reference} lista algumas das características relevantes do \textit{MySQL}, as quais são:
+\begin{itemize}
+    \item \textbf{Compatibilidade com SQL}: O \textit{MySQL} suporta a linguagem \textit{SQL (Strutured Query Language)}, \textit{SQL} é uma linguagem padrão para consultas e atualização de dados em um banco de dados.
+    \item \textbf{Independência de Plataforma}: O Servidor do \textit{MySQL} pode ser executado na maioria dos sistemas operacionais, os mais importantes são: \textit{Microsoft Windows}, \textit{Linux}, \textit{Apple Macintosh OS X} e as variantes do \textit{UNIX}.
+    \item \textbf{Compatibilidade}: Existem muitas \textit{APIs} e bibliotecas para o \textit{MySQL} que permitem que ele se comunique com diversas linguagens de programação como: \textit{PHP, C/C++, Java, C\#, Python, Perl} entre outras.
+    \item \textbf{Segurança}: A segurança do \textit{MySQL} e feito por um sistema de privilégios e senhas flexíveis, seguro e que permite a verificação baseada em estações/máquinas. Todo o tráfico de senhas é criptografado quando você se conecta ao servidor.
+    \item \textbf{Estabilidade}: Consegue lidar com bancos de dados enormes. Com capacidade de armazenação e manipulação de tabelas com mais de 50.000.000 registros. 
+\end{itemize}
 
-\section{CSS}
+
 
 \section{\textit{FRAMEWORKS} E BIBLIOTECAS}
 
@@ -303,9 +316,36 @@ O motivo da escolha do \textit{framework laravel} para o projeto, são algumas c
 
 \subsection{JQUERY}
 
+\begin{citacao}
+    jQuery é uma biblioteca de Javascript, rápida, pequena e rica em recursos. Ela faz com que coisas como seleção e manipulação do HTML, manipulação de eventos, animações e Ajax muito mais simples, com uma API fácil de usar que funciona em uma vasta quantidade de navegadores. Com uma combinação de versatilidade e capacidade de extensão, o jQuery mudou a maneira de milhões de pessoas que escrevem javaScript. \cite[tradução nossa]{jquery}
+\end{citacao}
+\par
+O \textit{jQuery} é uma biblioteca \textit{JavaScript} criada por Jogn Resig e disponibilizada como software livro e aberto, utilizando a licença \ac{MIT}\footnote{\url{https://tldrlegal.com/license/mit-license}}, o que significa que pode-se usar a biblioteca gratuitamente em projetos pessoais como comerciais.
+\par
+Segundo \cite[p.~4]{silva-jquery}, o \textit{jQuery}, se destina a adicionar interatividade e dinamismo às paginas web, incrementando a usabilidade, acessibilidade e o design da pagina, enriquecendo assim a experiência do usuário. \Idem{silva-jquery}, diz também que a biblioteca pode ser usada para: 
+\begin{itemize}
+    \item Adicionar efeitos visuais e animações;
+    \item Acessar e manipular o DOM;
+    \item Buscar informações no servidor sem a necessidade de recarregar a página (Ajax);
+    \item Prover interatividade;
+    \item Alterar conteúdos;
+    \item Modificar apresentação e estilização;
+    \item Simplificar tarefas especificas do \textit{JavaScript};
+\end{itemize}
+\par
+Uma das funcionalidades mais importantes do \textit{jQuery} é a possibilidade de acessar elementos do \ac{DOM}, que é uma plataforma que representa como as marcações em \textit{HTML, XHTML e XML} são organizadas e lidas pelo navegador \cite{franklin-dom}, utilizando seletores do \ac{CSS} para realizar a manipulação, diferente do código comum do \textit{JavaScript} em que o código e adicionado diretamente no elemento \textit{HTML} para definir qual elemento irá ser manipulado. como mostram os exemplos abaixo \ref{lst:javascript_example_1} e \ref{lst:jquery_example_1}.
+\begin{listing}[H]
+  \htmlcode{codigos/javascript_example_1.html}
+    \caption{Código simples, mudando a cor e texto de um elemento usando \textit{javascript} puro.}
+    \label{lst:javascript_example_1}
+\end{listing}
+Para realizar a mesma função do código \ref{lst:javascript_example_1} em \textit{jQuery}, ficaria dessa forma:
+\begin{listing}[H]
+    \htmlcode{codigos/jquery_example_1.html}
+      \caption{Mudando a cor e texto de um elemento usando \textit{jQuery}}
+      \label{lst:jquery_example_1}
+\end{listing}
 \subsection{VUE.JS}
-
-\subsubsection{MVVM}
 
 \subsection{BROWSERIFY}
 
@@ -314,3 +354,9 @@ O motivo da escolha do \textit{framework laravel} para o projeto, são algumas c
 \subsection{VIDEO.JS}
 
 \subsection{MATERIALIZECSS}
+
+\section{PADRÕES ARQUITETURAIS}
+
+\subsection{MVC}
+
+\subsection{MVVM}

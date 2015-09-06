@@ -1,0 +1,17 @@
+...
+<head>
+  <script type="text/javascript">
+      function mudarCorVermelho(){
+         var elemento_cor = document.getElementById('elemento_cor');
+         elemento_cor.style.color = '#FF0000';
+         elemento_cor.innerHTML = "Texto Vermelho";
+      }
+  </script>
+</head>
+...
+<body>
+  <h1 id="elemento_color">Texto Comum</h1>
+  <button type="button" id="btnCor" onclick="mudarCorVermelho()">
+      Mudar a cor para Vermelho
+  </button>
+...

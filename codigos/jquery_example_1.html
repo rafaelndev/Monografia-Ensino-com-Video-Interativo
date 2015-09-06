@@ -1,0 +1,23 @@
+...
+<head>
+    <script type="text/javascript">
+    $(document).ready(function(){
+        $('#btnCor').click(function() {
+            mudarCorVermelho();
+        });
+
+        function mudarCorVermelho(){
+          var elCor = $('#elemento_cor');
+          elCor.css('color', '#FF0000');
+          elCor.text('Texto Vermelho');
+           document.getElementById('elemento_color');
+        }
+    });
+    </script>
+...
+<body>
+    <h1 id="elemento_cor">Texto Comum</h1>
+    <button type="button" id="btnCor">
+    Mudar a cor para Vermelho
+    </button>
+...
