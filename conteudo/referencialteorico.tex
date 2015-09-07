@@ -359,33 +359,36 @@ Criada para ser uma biblioteca simples, com o intuito de realizar a separação 
 
 Algumas das Funcionalidades importantes do \textit{Vue}:
 
-\textbf{Componentes}:
-\begin{figure}[h]
-    \centering
-    \label{fig:vue-components}
-    \includegraphics[keepaspectratio=true,scale=0.25]{figuras/vue-components.png}
-    \caption{Ilustração dos componentes do \textit{Vue}, fonte: \cite{vuejs}}
-\end{figure}
-\par
-No \textit{Vue.js}, cada componente é uma instancia do \textit{Vue}. Os componentes formam uma hierarquia de arvore aninhada que representa a interface da aplicação, como mostra a imagem \ref{fig:vue-components}.
-\par
-\textbf{Diretrizes}:
-Diretrizes no \textit{Vue} são atributos \textit{HTML} prefixados que dizem ao \textit{Vue.js} para fazer algo com o elemento \textit{DOM}.
-\begin{listing}[H]
-    \htmlcode{codigos/vue-directive.html}
-    \caption{Exemplo de diretriz do \textit{Vue}}
-    \label{lst:vue-directive-example}
-\end{listing}
-No exemplo \ref{vue-directive-example}, o elemento tem uma diretriz \textit{v-text} com o valor "texto". Esse exemplo vai dizer ao \textit{Vue.js} para manter o conteúdo de texto da \textit{div} em sincronização com a propriedade "texto" da instância do \textit{Vue}.
-\par
-\textbf{Filtros}:
-Filtros são funções que processam o valor bruto de uma propriedade antes de atualizar a \textit{View}.
-\begin{listing}[H]
-    \htmlcode{codigos/vue-filter.html}
-    \caption{Exemplo de Filtro do \textit{Vue}}
-    \label{lst:vue-filter-example}
-\end{listing}
-No exemplo \ref{lst:vue-filter-example}, antes do texto da \textit{div} ser atualizado, primeiro ela vai passar pela função \textit{uppercase} que por padrão coloca todo o texto em caixa alta. A função \textit{uppercase} e vem por padrão no \textit{vue} mais os filtros podem ser criados de forma customizada na instancia do \textit{vue}.
+\begin{itemize}
+    \item \textbf{Componentes}:
+    \begin{figure}[h]
+        \centering
+        \label{fig:vue-components}
+        \includegraphics[keepaspectratio=true,scale=0.25]{figuras/vue-components.png}
+        \caption{Ilustração dos componentes do \textit{Vue}, fonte: \cite{vuejs}}
+    \end{figure}
+    \par
+    No \textit{Vue.js}, cada componente é uma instancia do \textit{Vue}. Os componentes formam uma hierarquia de arvore aninhada que representa a interface da aplicação, como mostra a imagem \ref{fig:vue-components}.
+    \par
+    \item \textbf{Diretrizes}:
+    Diretrizes no \textit{Vue} são atributos \textit{HTML} prefixados que dizem ao \textit{Vue.js} para fazer algo com o elemento \textit{DOM}.
+    \begin{listing}[H]
+        \htmlcode{codigos/vue-directive.html}
+        \caption{Exemplo de diretriz do \textit{Vue}}
+        \label{lst:vue-directive-example}
+    \end{listing}
+    No exemplo \ref{vue-directive-example}, o elemento tem uma diretriz \textit{v-text} com o valor "texto". Esse exemplo vai dizer ao \textit{Vue.js} para manter o conteúdo de texto da \textit{div} em sincronização com a propriedade "texto" da instância do \textit{Vue}.
+    \par
+    \item \textbf{Filtros}:
+    Filtros são funções que processam o valor bruto de uma propriedade antes de atualizar a \textit{View}.
+        \begin{listing}[H]
+            \htmlcode{codigos/vue-filter.html}
+            \caption{Exemplo de Filtro do \textit{Vue}}
+            \label{lst:vue-filter-example}
+        \end{listing}
+    No exemplo \ref{lst:vue-filter-example}, antes do texto da \textit{div} ser atualizado, primeiro ela vai passar pela função \textit{uppercase} que por padrão coloca todo o texto em caixa alta. A função \textit{uppercase} e vem por padrão no \textit{vue} mais os filtros podem ser criados de forma customizada na instancia do \textit{vue}.
+\end{itemize}
+
 \subsection{BROWSERIFY}
 
 \subsection{GULP}
