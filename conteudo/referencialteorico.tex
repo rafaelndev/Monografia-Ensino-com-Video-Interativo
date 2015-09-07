@@ -388,8 +388,19 @@ Algumas das Funcionalidades importantes do \textit{Vue}:
         \end{listing}
     No exemplo \ref{lst:vue-filter-example}, antes do texto da \textit{div} ser atualizado, primeiro ela vai passar pela função \textit{uppercase} que por padrão coloca todo o texto em caixa alta. A função \textit{uppercase} e vem por padrão no \textit{vue} mais os filtros podem ser criados de forma customizada na instancia do \textit{vue}.
 \end{itemize}
-
+\newpage
 \subsection{BROWSERIFY}
+O \textit{Browserify} é uma ferramenta desenvolvida com \textit{javascript} que permite usar a função \textit{require} do \textit{NodeJS} (Interpretador \textit{javascript} do lado do servidor) diretamente no navegador, empacotando todas as dependências do seu projeto em um ou poucos arquivos \cite{browserify}.
+\par
+O \textit{Browserify} permite que você escreva seu código \textit{javascript} e somente use as bibliotecas necessárias para determinado modulo, por meio da função \textit{require(./nome\_do\_arquivo.js)}, o \textit{browserify} também funciona com o \ac{NPM}, que é um gerenciador de pacotes do \textit{NodeJS} e de bibliotecas/\textit{frameworks} \textit{javascript} em geral. Isso permite que você instale a biblioteca \textit{Vue} por exemplo, usando \textit{npm} e a use com o \textit{browserify} sem precisar definir o caminho completo de onde está o arquivo \textit{vue.js}, criando somente a variável no seu modulo dessa forma:
+\begin{listing}[H]
+    \jsfilecode{codigos/browserify-vue.js}
+    \caption{Exemplo de \textit{require} com \textit{browserify}}
+    \label{lst:browserify-vue-example}
+\end{listing}
+Assim a biblioteca \textit{Vue} estará disponível no seu modulo.
+\par
+Utilizando o \textit{browserify} facilita a modularização do projeto \textit{front-end} (parte visual de um sistema, ou seja a parte em que o usuário interage com o sistema), tornando o código organizado, reutilizável e escalável, por meio do controle de dependências, outro ponto importante, e a redução de requisições que o usuário faz ao servidor, como o \textit{browserify} cria um ou poucos arquivos \textit{javascript} empacotados (dependendo da preferencia do desenvolvedor), reduz a quantidade de pedidos aos arquivos de \textit{script}, pois em vez de o navegador requisitar 20 arquivos, por exemplo, ele realizaria somente um pedido para o servidor.
 
 \subsection{GULP}
 
