@@ -32,18 +32,20 @@
 % Cor de fundo dos scripts
 \definecolor{codebg}{rgb}{0.97,0.97,0.97}
 
-% Definir código do Javascript {jscode}
-\newminted[jscode]{javascript}{tabsize=4, fontsize=\footnotesize, frame=lines, framesep=5\fboxrule,framerule=1pt,rulecolor=\color{gray!40}}
+\def\args{tabsize=4, fontsize=\footnotesize, frame=lines, framesep=5\fboxrule,framerule=1pt,rulecolor=\color{gray!40}}
 
-\newmintedfile[jsfilecode]{javascript}{tabsize=4, fontsize=\footnotesize, frame=lines, framesep=5\fboxrule,framerule=1pt,rulecolor=\color{gray!40}}
+\newcommand{\makenewmintedfiles}[1]{%
+    \newmintedfile[jsfile]{javascript}{#1}%
+    \newmintedfile[htmlfile]{html}{#1}%
+}
+\expandafter\makenewmintedfiles\expandafter{\args}
 
-% Definir código do PHP {phpcode}
-\newminted[phpcode]{php}{tabsize=4, fontsize=\footnotesize, frame=lines, framesep=5\fboxrule,framerule=1pt,rulecolor=\color{gray!40}}
-
-% Definir código do SQL {sqlcode}
-\newminted[sqlcode]{sql}{tabsize=4, fontsize=\footnotesize, frame=lines, framesep=5\fboxrule,framerule=1pt,rulecolor=\color{gray!40}}
-
-\newmintedfile[htmlcode]{html}{tabsize=4, fontsize=\footnotesize, frame=lines, framesep=5\fboxrule,framerule=1pt, rulecolor=\color{gray!40}}
+\newcommand{\makenewminted}[1]{%
+    \newminted[jscode]{javascript}{#1}%
+    \newminted[phpcode]{php}{#1}%
+    \newminted[sqlcode]{sql}{#1}%
+}
+\expandafter\makenewmintedfiles\expandafter{\args}
 
 \renewcommand\listoflistingscaption{Lista de Códigos}
 \renewcommand\listingscaption{Código}
