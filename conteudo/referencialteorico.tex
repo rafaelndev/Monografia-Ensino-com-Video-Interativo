@@ -402,13 +402,21 @@ Assim a biblioteca \textit{Vue} estará disponível no seu modulo.
 \par
 Utilizando o \textit{browserify} facilita a modularização do projeto \textit{front-end} (parte visual de um sistema, ou seja a parte em que o usuário interage com o sistema), tornando o código organizado, reutilizável e escalável, por meio do controle de dependências. Outro ponto importante, é a redução de requisições que o usuário faz ao servidor, como o \textit{browserify} cria um ou poucos arquivos \textit{javascript} empacotados (dependendo da preferencia do desenvolvedor), acaba reduzindo a quantidade de pedidos aos arquivos de \textit{script}, pois em vez de o navegador requisitar 20 arquivos, por exemplo, ele realizaria somente um pedido para o servidor.
 
-\subsection{GULP}
+\subsection{GULP.JS}
+
+O \textit{Gulp} é uma ferramenta de automação de tarefas e \textit{build}, como o \textit{Maven, Ant, Gradle ou Make} feita em \textit{Javascript} e rodando encima do \textit{Node.Js}, e voltado no desenvolvimento \textit{front-end} \cite{souza-gulp}
+\par
+No mundo do \textit{front-end}, para alcançar uma boa performance no site, e recomendado minificar os recursos \textit{CSS} e \textit{Javascript}, e também juntar os arquivos para diminuir o número de requisições, também as vezes é necessario utilizar preprocessadores, como o \textit{LESS} ou \textit{SASS}, e no caso do projeto, também é necessário rodar o \textit{browserify} para realizar o processo de modularização pelo \textit{require}, entre outras ferramentas. Para rodar isso tudo individualmente, provavelmente consumiria muito tempo, é com \textit{Gulp} é possivel automatizar todo esse processo.
 
 \subsection{VIDEO.JS}
+O \citeonline{videojs}, é uma biblioteca de \textit{Javascript} e \textit{CSS} que facilita trabalhar e construir vídeos \textit{HTML5}.
+\par
+O \textit{Video.JS} também proporciona uma facilidade na sua customização, por meio de \textit{skins}, é uma \textit{API} para interagir com o video, além de funcionar \textit{cross-browser} ou seja em diversos navegadores.
 
-\subsection{MATERIALIZECSS}
+%\subsection{MATERIALIZECSS}
 
 \section{PADRÕES ARQUITETURAIS}
+Nessa seção apresentarei os dois padrões arquiteturais que foram usados nesse projeto, o \textit{MVC} e o \textit{MVVM}.
 
 \subsection{MVC}
 
