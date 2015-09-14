@@ -44,9 +44,9 @@ O \textit{e-learning} também pode ser definido como um método de ensino a dist
 
 \begin{figure}[h]
   \centering
-  \label{fig:e-learning-caracterização-barbosa}
   \includegraphics[keepaspectratio=true,scale=0.6]{figuras/e-learning-barbosa.png}
   \caption{Processo de \textit{e-Learning} por \citeonline{barbosa}}
+  \label{fig:e-learning-caracterização-barbosa}
 \end{figure}
 
 
@@ -138,9 +138,9 @@ A especificação do \ac{SCORM} está dividido em 4 documentos, chamados de livr
 
 \begin{figure}[h]
   \centering
-  \label{fig:scorm-funcionamento-dutra}
   \includegraphics[keepaspectratio=true,scale=0.7]{figuras/scorm-funcionamento-dutra.png}
   \caption{SCORM como conjunto de especificações. Fonte: \citeonline{dutra-scorm-ims}}.
+  \label{fig:scorm-funcionamento-dutra}
 \end{figure}
 
 O pacote \ac{SCORM} gerado tem como resultado um arquivo \textit{ZIP}, esse arquivo contem o conteúdo do curso, e também deve possuir todos os arquivos \textit{HTML}, \textit{Javascript}, imagens e animações, além de um arquivo de manifesto chamado \textit{imsmanifest.xml}. Este arquivo descreve a estrutura lógica do conteúdo como a navegação das páginas e a organização de todo conteúdo. O \ac{LMS} carrega esse pacote e então cria o relacionamento entre as unidades (Pacote \textit{SCORM} e o \textit{LMS}). \cite[p.~39]{fernandes-scorm}.
@@ -410,45 +410,85 @@ Utilizando o \textit{browserify} facilita a modularização do projeto \textit{f
 
 O \textit{Gulp} é uma ferramenta de automação de tarefas e \textit{build}, como o \textit{Maven, Ant, Gradle ou Make} feita em \textit{Javascript} e rodando encima do \textit{Node.Js}, e voltado no desenvolvimento \textit{front-end} \cite{souza-gulp}
 
-No mundo do \textit{front-end}, para alcançar uma boa performance no site, e recomendado minificar os recursos \textit{CSS} e \textit{Javascript}, e também juntar os arquivos para diminuir o número de requisições, também as vezes é necessario utilizar preprocessadores, como o \textit{LESS} ou \textit{SASS}, e no caso do projeto, também é necessário rodar o \textit{browserify} para realizar o processo de modularização pelo \textit{require}, entre outras ferramentas. Para rodar isso tudo individualmente, provavelmente consumiria muito tempo, é com \textit{Gulp} é possivel automatizar todo esse processo.
+No mundo do \textit{front-end}, para alcançar uma boa performance no site, e recomendado minificar os recursos \ac{CSS} e \textit{Javascript}, e também juntar os arquivos para diminuir o número de requisições, também as vezes é necessario utilizar preprocessadores, como o \textit{LESS} ou \textit{SASS}, e no caso do projeto, também é necessário rodar o \textit{browserify} para realizar o processo de modularização pelo \textit{require}, entre outras ferramentas. Para rodar isso tudo individualmente, provavelmente consumiria muito tempo, é com \textit{Gulp} é possivel automatizar todo esse processo.
 
 \subsection{VIDEO.JS}
-O \citeonline{videojs}, é uma biblioteca de \textit{Javascript} e \textit{CSS} que facilita trabalhar e construir vídeos \textit{HTML5}.
+O \citeonline{videojs}, é uma biblioteca de \textit{Javascript} e \ac{CSS} que facilita trabalhar e construir vídeos \textit{HTML5}.
 
-O \textit{Video.JS} também proporciona uma facilidade na sua customização, por meio de \textit{skins}, é uma \textit{API} para interagir com o video, além de funcionar \textit{cross-browser} ou seja em diversos navegadores.
+O \textit{Video.JS} também proporciona uma facilidade na sua customização, por meio de \textit{skins}, é uma \ac{API} para interagir com o video, além de funcionar \textit{cross-browser} ou seja em diversos navegadores.
 
 %\subsection{MATERIALIZECSS}
 \newpage
 \section{PADRÕES ARQUITETURAIS}
-Nessa seção apresentarei os dois padrões arquiteturais que foram usados nesse projeto, o \textit{MVC} e o \textit{MVVM}.
+Nessa seção apresentarei os dois padrões arquiteturais que foram usados nesse projeto, o \ac{MVC} e o \ac{MVVM}.
 
-\subsection{MVC}
+\subsection{\textit{MVC (Model-View-Controller)}}
     \begin{figure}[h]
         \centering
-        \label{fig:mvc-fowler}
         \includegraphics[keepaspectratio=true,scale=0.7]{figuras/mvc-fowler.png}
-        \caption{Ilustração do \textit{MVC}, fonte: \cite{martin_fowler_patterns}}
+        \caption{Ilustração do \ac{MVC}, fonte: \cite{martin_fowler_patterns}}
+        \label{fig:mvc-fowler}
     \end{figure}
 
 \textit{Model View Controller (MVC)}, começou como um \textit{framework} criado por Trygve Reenskaug para a plataforma Smalltalk em 1970. \cite[p.~321]{martin_fowler_patterns}.
 
-Segundo \citeonline[p.~321]{martin_fowler_patterns} o \textit{MVC} consiste em três regras, são elas:
+Segundo \citeonline[p.~321]{martin_fowler_patterns} o \ac{MVC} consiste em três regras, descritas na tabela~\ref{tbl:mvc}:
 
 \begin{table}[htdp]
     \begin{center}
         \begin{tabular}{|l|p{10cm}|}
             \hline \textbf{Regra} & \textbf{Descrição} \\
-            \hline \textit{Model} & 
+            \hline \textit{Model} (Modelo) & 
             O \textit{model} é um objeto que representa informações sobre o domínio. É um objeto não visual, que contem todos os dados e comportamentos, diferente do utilizado para a UI. \\
-            \hline \textit{View} & 
-            A \textit{view} representa a visualização do \textit{model} na \textit{UI} \\
-            \hline \textit{Controller} & 
+            \hline \textit{View} (Apresentação) & 
+            A \textit{view} representa a visualização do \textit{model} na \ac{UI} \\
+            \hline \textit{Controller} (Controle) & 
             O \textit{controller} tem o papel de receber entradas do usuário, manipular o \textit{model}, e atualizar a \textit{view}. \\
             \hline
         \end{tabular}
-        \caption{Descrição do MVC.}.
-        \label{tbl:netcraft}
+        \caption{Descrição do \ac{MVC}.}.
+        \label{tbl:mvc}
     \end{center}
 \end{table}
 
-\subsection{MVVM}
+Um dos pontos principais na separação do \ac{MVC} é a direção das dependências, a camada da apresentação (\textit{view}) depende do \textit{model}, mais o \textit{model} não depende da \textit{view}, por causa dessa separação, quem estiver desenvolvendo o \textit{model} não precisa saber como a apresentação está sendo feita, facilitando que a criação das apresentações. Isso significa também que as mudançasw na apresentação podem ser feitas livremente sem afetar o modelo.
+
+\citeonline[p.~322]{martin_fowler_patterns}, também cita alguns pontos importantes dessa separação, como o fato de que quando está desenvolvendo uma apresentação, é necessário se concentrar na \ac{UI} e como criar uma boa interface. E quando se está construindo um modelo é necessário pensar nas politicas comerciais também nas interações com o banco de dados. Testes também se tornam mais simples com essa separação, porque objetos não visuais são mais fáceis de testar do que os visuais, separando a apresentação do \textit{model}, permite que seja feito testes na logica do domínio facilmente sem se importar com a \ac{UI} do sistema.
+\subsection{\textit{MVVM (Model-View-ViewModel)}}
+
+    \begin{figure}[h]
+        \centering
+        \includegraphics[keepaspectratio=true,scale=0.8]{figuras/mvvm-microsoft.png}
+        \caption{Ilustração do funcionamento do \textit{MVVM}, fonte: \cite{ms_mvvm}}
+        \label{fig:mvvm-microsoft}
+    \end{figure}
+
+O \ac{MVVM} é um padrão que foi criado em 2005 por John Gossman, um dos arquitetos do \ac{WPF}\footnote{Windows Presentation Foundation (WPF) no Visual Studio de 2015 fornece aos desenvolvedores um modelo de programação unificado para criar aplicativos de área de trabalho de linha de negócios modernos no Windows. \url{https://msdn.microsoft.com/pt-br/library/aa970268\%28v=vs.110\%29.aspx}} e \textit{Silverlight} na \textit{Microsoft}.
+
+Segundo a \citeonline{ms_mvvm}, o \acf{MVVM} foi criado para realizar uma separação clara entre a interface do usuário e a logica. o padrão \ac{MVVM} e composto por três componentes: O \textit{model} (Modelo), a \textit{view} (Apresentação) e a \textit{ViewModel}, cada um tem um papel distinto, a ilustração~\ref{fig:mvvm-microsoft} mostra a relação entre os três componentes, como mostrado na tabela~\ref{tbl:mvvm}.
+
+\begin{table}[htdp]
+    \begin{center}
+        \begin{tabular}{|l|p{11cm}|}
+            \hline \textbf{Componente} & \textbf{Descrição} \\
+            \hline \textit{View} (Apresentação) & 
+            A camada de aprensentação, é responsável por definir a estrutura, \textit{layout} e aparência do que o usuário vê na tela.
+            
+            Uma apresentação por ter seu próprio \textit{view model}. ou pode herdar do \textit{view model} principal. A \textit{view} recebe os dados do seu \textit{view model} por meio de \textit{bindings} (ligações), ou invocando métodos no \textit{view model}. Em tempo de execução, a \textit{view} se modifica quando os controles da interface do usuário (UI) responde  as propriedades do \textit{view model} quando ele dispara eventos de modificação.
+             \\
+            \hline \textit{Model} (Modelo) & 
+            O modelo na \textit{MVVM} é uma implementação do modelo de domínio da aplicação, que inclui um modelo de dados, juntamente com a lógica de negócio e validação. \\
+            \hline \textit{View Model} & 
+            O \textit{view model} é uma camada intermediaria entre a \textit{view} e o \textit{model}, e tem a responsabilidade de tratar a lógica da camada de apresentação. A camada \textit{view model} interage com o \textit{model} chamando métodos no \textit{model}, então o \textit{view model} envia os dados recebidos do \textit{model} de uma forma que a \textit{view} possa utilizar de forma simples, com a possibilidade de formatar esses dados para facilitar seu uso na \textit{view}. \\
+            \hline
+        \end{tabular}
+        \caption{Descrição do \ac{MVVM}.}.
+        \label{tbl:mvvm}
+    \end{center}
+\end{table}
+
+\begin{citacao}
+    O MVVM permite a você ter uma visão da clara separação da Interface com o usuário (View), sua lógica de apresentação (ViewModel) e os seus Dados (Model). E, trabalhando dessa forma, temos separação de responsabilidades, desacoplamento e conseguimos evoluir e manter melhor as nossas aplicações. \cite{ferreira_mvvm}
+\end{citacao}
+
+Como e mostrado na figura~\ref{fig:mvvm} e também descrito por \citeonline{ferreira_mvvm}, o processo do \textit{MVVM} ocorre dessa forma: A \textit{View}, através do \textit{databinding}, interage com a \textit{ViewModel} notificando algum evento. A \textit{ViewModel} responde a essa notificação, realizando alguma ação no modelo, como obter algum dado, atualizar ou inserir informações. Caso alguma informação seja modificado no \textit{Model}, a \textit{ViewModel} recebe uma notificação de atualização, que em seguida, notifica também a \textit{view} com essa atualização. 
