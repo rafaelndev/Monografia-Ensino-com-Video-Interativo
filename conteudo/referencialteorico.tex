@@ -74,6 +74,7 @@ O vídeo se tornou um recurso de fácil acesso, mais seu na educação somente c
 \end{citacao}
 
 \section{SISTEMA DE GESTÃO DE APRENDIZADO (\textit{LMS})}
+\label{sec:lms}
 
 \citeonline[p.~2]{andrade} descreve o \ac{LMS} como um software que controla o desenvolvimento, gerenciamento e acompanhamento de cursos de aprendizagem online. O \ac{LMS} é um sistema de gestão que possui funcionalidades para suportar o aprendizado a distância tais como: distribuição, acompanhamento, monitoramento e administração de conteúdo de aprendizagem com os progressos e interações dos alunos.
 Segundo \citeonline[p.~3]{goni}:
@@ -147,6 +148,7 @@ O pacote \ac{SCORM} gerado tem como resultado um arquivo \textit{ZIP}, esse arqu
 Como o \textit{SCORM} e distribuído como um pacote \textit{ZIP}, permite que os seus conteúdos resistam a evolução tecnológica, com custo baixo de reconfiguração, esse pacote pode ser reaproveitado em \textit{LMS} compatíveis com seu funcionamento inalterado.
 
 \subsubsection{\textit{LTI (Learning Tool Interoperability)}}
+\label{sec:lti}
 O \textit{LTI} foi criado pela \textit{IMS}, a primeira versão TI 1.0 foi lançado em 2006 mais na época foi considerado muito complexo, e não teve uma boa adoção. O projeto do \textit{Learning Tools Interoperability} foi desenvolvido com os mesmos objetivos do TI, mais com uma solução mais simples. \cite{ims}
 
 A versão atual do \textit{LTI} é a 1.1, que suporta dados de retorno ao \textit{LMS} como as notas que ao aluno atingiu no curso.
@@ -192,6 +194,7 @@ Uma requisição de lançamento LTI (\textit{LTI launch}) é um \textit{POST} \a
 Para que a Ferramenta fosse desenvolvida, foi realizado um estudo das ferramentas que melhor atenderiam esse processo. A escolha foi baseada principalmente priorizando as tecnologias que já se tinha conhecimento, e também na facilidade de uso.
 
 \section{PHP}
+\label{sec:php}
 
 Atualmente a abreviação \textit{PHP} vem de \textit{Hypertext Preprocessor}, é uma linguagem de programação de código aberto muito usada para \textit{scripts} que são usados juntamente á um servidor web para servir páginas \textit{HTML}.
 
@@ -228,6 +231,7 @@ O \textit{PHP} também pode ser utilizado na maioria dos sistemas operacionais, 
 
 
 \section{APACHE}
+\label{sec:apache}
 
 Um servidor \textit{WEB} e responsável de aceitar requisições \textit{HTTP} dos clientes \textit{web} e servi-los com respostas \textit{HTTP} geralmente na forma de paginas com conteúdo estático como texto e imagens, e conteúdos dinâmicos como \textit{scripts} \cite[p.~15]{igor}.
 
@@ -242,7 +246,7 @@ A importância principal do \textit{Apache} para o projeto, é o seu suporte com
 
 O \textit{Apache} é também o servidor \textit{web} mais utilizado no mundo, segundo a pesquisa do \citeonline{netcraft-survey} mostrado na tabela \ref{tbl:netcraft}.
 
-\begin{table}[htdp]
+\begin{table}[htp]
 	\begin{center}
     \begin{tabular}{|c|c|c|c|c|c|}
         \hline \textbf{Developer} & \textbf{July 2015} & \textbf{Percent} & \textbf{August 2015} & \textbf{Percent} & \textbf{Change} \\
@@ -258,10 +262,11 @@ O \textit{Apache} é também o servidor \textit{web} mais utilizado no mundo, se
 \end{table}
 
 \section{MYSQL}
+\label{sec:mysql}
 
 Segundo \citeonline[p.~38]{mysql-reference}, O \textit{MySQL} é um sistema de gerenciamento de banco de dados relacional \textit{SQL Opem Source}, desenvolvido pela \textit{MySQL AB} uma empresa Sueca fundada por David Axmark, Allan Larsson e Michael Widenius.
 
-Em janeiro de 2008, a empresa \textit{MySQL AB}, foi adquirida pela \textit{Sun Microsystems}, por US\$ 1 bilhão\footnote{\url{http://www.zdnet.com/article/sun-acquires-mysql-adds-to-its-software-stack/}}. E em abril de 2009 a \textit{Oracle} comprou a \textit{Sun Microsystems} e todos os seus produtos\footnote{\url{http://www.oracle.com/us/corporate/press/018363}}.
+Em janeiro de 2008, a empresa \textit{MySQL AB}, foi adquirida pela \textit{Sun Microsystems}, por US\$ 1 bilhão\footnote{\url{http://www.zdnet.com/article/sun-acquires--adds-to-its-software-stack/}}. E em abril de 2009 a \textit{Oracle} comprou a \textit{Sun Microsystems} e todos os seus produtos\footnote{\url{http://www.oracle.com/us/corporate/press/018363}}.
 
 Assim como o PHP, o \textit{MySQL} é um \textit{software} de código aberto, possuindo dois tipos de licença: a licença para uso Livre \ac{GPL}, sem custos, e a licença comercial, necessária para usar o \textit{MySQL} em aplicações comerciais.
 
@@ -279,6 +284,8 @@ Assim como o PHP, o \textit{MySQL} é um \textit{software} de código aberto, po
 \section{\textit{FRAMEWORKS} E BIBLIOTECAS}
 
 \subsection{\textit{LARAVEL}}
+\label{sec:laravel}
+
 O \textit{Laravel} é um \textit{framework PHP} de código aberto, criado por Taylor Otwell, para o desenvolvimento de aplicações \textit{WEB}, seguindo o padrão arquitetural \ac{MVC}.
 
 O motivo da escolha do \textit{framework laravel} para o projeto, são algumas características que simplificam o desenvolvimento, e permitem uma melhor modularizarão do código, como por exemplo essas listadas por \citeonline[p.~24]{bean-laravel}:
@@ -422,6 +429,8 @@ O \textit{Video.JS} também proporciona uma facilidade na sua customização, po
 Nessa seção apresentarei os dois padrões arquiteturais que foram usados nesse projeto, o \ac{MVC} e o \ac{MVVM}.
 
 \subsection{\textit{MVC (Model-View-Controller)}}
+\label{sec:mvc}
+
     \begin{figure}[h]
         \centering
         \includegraphics[keepaspectratio=true,scale=0.7]{figuras/mvc-fowler.png}
@@ -433,7 +442,7 @@ Nessa seção apresentarei os dois padrões arquiteturais que foram usados nesse
 
 Segundo \citeonline[p.~321]{martin_fowler_patterns} o \ac{MVC} consiste em três regras, descritas na tabela~\ref{tbl:mvc}:
 
-\begin{table}[htdp]
+\begin{table}[htp]
     \begin{center}
         \begin{tabular}{|l|p{10cm}|}
             \hline \textbf{Regra} & \textbf{Descrição} \\
@@ -461,12 +470,12 @@ Um dos pontos principais na separação do \ac{MVC} é a direção das dependên
         \caption{Ilustração do funcionamento do \textit{MVVM}, fonte: \cite{ms_mvvm}}
         \label{fig:mvvm-microsoft}
     \end{figure}
-
+2
 O \ac{MVVM} é um padrão que foi criado em 2005 por John Gossman, um dos arquitetos do \ac{WPF}\footnote{Windows Presentation Foundation (WPF) no Visual Studio de 2015 fornece aos desenvolvedores um modelo de programação unificado para criar aplicativos de área de trabalho de linha de negócios modernos no Windows. \url{https://msdn.microsoft.com/pt-br/library/aa970268\%28v=vs.110\%29.aspx}} e \textit{Silverlight} na \textit{Microsoft}.
 
 Segundo a \citeonline{ms_mvvm}, o \acf{MVVM} foi criado para realizar uma separação clara entre a interface do usuário e a logica. o padrão \ac{MVVM} e composto por três componentes: O \textit{model} (Modelo), a \textit{view} (Apresentação) e a \textit{ViewModel}, cada um tem um papel distinto, a ilustração~\ref{fig:mvvm-microsoft} mostra a relação entre os três componentes, como mostrado na tabela~\ref{tbl:mvvm}.
 
-\begin{table}[htdp]
+\begin{table}[htp]
     \begin{center}
         \begin{tabular}{|l|p{11cm}|}
             \hline \textbf{Componente} & \textbf{Descrição} \\
