@@ -2,12 +2,98 @@
 
 \partanexos
 
-\chapter{Primeiro Anexo}
+\chapter{Tabela da Estrutura do Banco de Dados}
+\label{anx:tabela-estrutura}
 
-Texto do primeiro anexo.
-
-\chapter{Segundo Anexo}
-
-Texto do segundo anexo.
+    \begin{longtable}{|p{.20\textwidth}|p{.80\textwidth}|}
+        \hline \textbf{Tabela} & \textbf{Descrição} \\
+        \hline \textit{users} &
+        Essa tabela guarda os dados do usuário criado pelo sistema de registro, os usuários dessa tabela são donos de um ou mais \textit{Tool Consumer}, definidos na tabela \textit{lti\_consumer}.
+        \\ 
+        \hline \textit{lti\_consumer} &
+        Armazena os dados do \textit{Tool Consumer} ou seja do sistema \textit{LMS}, como o nome, chave e segredo.
+        
+        \begin{itemize}
+            \item \textit{consumer\_key}: chave do \textit{tool consumer}, gerada pelo sistema, necessária para realizar a autenticação lti.
+            \item \textit{secret}: chave secreta gerada pelo sistema, também necessária para realizar a autenticação \textit{lti}.
+            \item \textit{user\_id}: ligação da tabela com o usuário.
+            \item \textit{consumer\_guid, consumer\_name, consumer\_version, lti\_version}: dados enviados pelo \textit{tool consumer}, por meio da integração \textit{lti}. Correspondem respectivamente à: identificador único do \textit{consumer}, nome, versão e versão do \textit{lti} usada pelo \textit{TC}.
+        \end{itemize}
+        \\ 
+        \hline \textit{lti\_user} &
+        Armazena as informações do usuário do \textit{LMS} (\textit{Tool Consumer}), como seu nome, email e papel.
+        
+        \begin{itemize}
+            \item \textit{consumer\_key}: ligação com tabela \textit{lti\_consumer}.
+            \item \textit{context\_id}: ligação com a tabela \textit{lti\_context}.
+            \item \textit{user\_id firstname, lastname, fullname, email}: dados de perfil enviados pelo \textit{LMS}.
+            \item \textit{roles}: papel do usuário no contexto do \textit{LTI}, exemplo, se ele é professor ou aluno do curso.
+            \item \textit{lti\_result\_sourcedid}: dados gerais da integração necessária para a \textit{API} do \textit{LTI}.
+        \end{itemize}
+        \\
+        \hline \textit{lti\_context} &
+        Guarda as informações da integração do \textit{LTI}, e da ligação com os cursos.
+        
+        \begin{itemize}
+            \item \textit{lti\_context\_id}: o id do contexto é equivalente ao id do curso no \textit{LMS}.
+            \item \textit{context\_id e lti\_resource\_id}: guardam a informação do recurso, ou seja a instância única do curso que é ligada ao curso do \textit{Tool Provider}.
+        \end{itemize}
+        \\
+        \hline \textit{cursos} &
+        Armazena as informações do curso criado pelo \textit{lti\_user} professor.
+        
+        \begin{itemize}
+            \item \textit{video\_url}: \textit{URL} do vídeo, por enquanto somente suporta \textit{Youtube}.
+            \item \textit{titulo}: título do Curso.
+            \item \textit{lti\_user\_id}: ligação com a tabela \textit{lti\_user}
+            \item \textit{lti\_context\_id}: ligação com a tabela \textit{lti\_context}
+            \item \textit{tipo}: tipo do vídeo, (arquivo, youtube, vimeo, etc..).
+        \end{itemize}
+        \\
+        
+        \hline \textit{markers} &
+        Armazena as informações referentes aos elementos de questão que aparecerem ao decorrer do vídeo.
+        
+        \begin{itemize}
+            \item \textit{curso\_id}: ligação com a tabela de cursos.
+            \item \textit{tipo}: tipo da marcação: Elemento de Texto, Texto Aberto, Questão e Questão de múltipla escolha.
+            \item \textit{key}: chave de identificação da marcação.
+            \item \textit{texto}: texto ou título do elemento.
+            \item \textit{extras}: informações gerais do elemento, como as questões criadas pelo professor, armazenado em formato \textit{JSON}.
+            \item \textit{time}: tempo do vídeo que essa marcação será ativada.
+        \end{itemize}
+        \\
+        
+        \hline \textit{curso\_resultados} &
+        \begin{itemize}
+            \item \textit{resultado}: coluna \textit{JSON}, com os resultados da realização do curso pelo aluno.
+            \item \textit{lti\_user\_id}: identificação do usuário \textit{lti}, ligado a tabela \textit{lti\_user}.
+            \item \textit{curso\_id}: ligação com a tabela de cursos.
+        \end{itemize}
+        \\
+        
+        \hline \textit{password\_resets} &
+        Criado automaticamente pelo \textit{framework}, usado para armazenar informações de recadastramento de senhas.
+        \\
+        
+        \hline \textit{sessions} &
+        Criado pelo \textit{framework}, usado para armazenas as sessões do sistema.
+        \\
+        
+        \hline \textit{migrations} &
+        Criado pelo \textit{framework}, usado para armazenar as informações de migrações do banco de dados.
+        \\
+        
+        \hline \textit{lti\_nonce}&
+        Guarda as informações do tempo de expiração de uma sessão especifica do \textit{lti}.
+        \\
+        
+        \hline \textit{lti\_share\_key} &
+        Guarda informações sobre compartilhamento de chaves \textit{lti}, não usado no sistema, mais necessário para o funcionamento da \textit{API}.
+        \\
+        \hline 
+        \caption{Tabela com a descrição da tabelas do banco de dados.}
+        \label{tbl:estrutura-banco-dados}
+    \end{longtable} 
 
 \end{anexosenv}

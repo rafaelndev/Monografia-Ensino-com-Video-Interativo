@@ -1,0 +1,25 @@
+\chapter{Conclusão}
+
+Esse trabalho apresentou um sistema \textit{Web} que possibilita o uso de vídeos na criação de cursos/atividades de forma mais interativa para o aluno, visando o uso otimizado da mídia audiovisual no ensino a distância. Após seu desenvolvimento, foi constatado que tanto os objetivos gerais como os específicos foram atendidos com sucesso.
+
+O projeto ainda não foi usado em um ambiente real, porém no ambiente de testes, a ferramenta obteve sucesso na integração com o Sistema de Gerenciamento de Aprendizado \textit{Moodle}.
+
+Alguns desafios foram enfrentados durante o desenvolvimento, a maioria relacionado as \textit{APIs} que mesmo facilitando o desenvolvimento, necessitaram de um certo tempo para aprende-las, mas após seu entendimento, o desenvolvimento se tornou mais fácil, além de tornar o sistema mais rico em recursos.
+
+Mais dos problemas apresentados pela \textit{API} de integração \textit{LTI}, surgiu um novo projeto, como o código da biblioteca foi modificado para se adequar aos requisitos atuais da linguagem \textit{PHP} e de seus \textit{frameworks}, será criado um repositório, publico no \textit{GitHub} para compartilhar essa versão atualizada da biblioteca com quem estiver passando pelos mesmo problemas.
+
+Os conhecimentos adquiridos nesse projeto, são muito importantes para o incentivo da continuação desse projeto nos trabalhos futuros.
+
+\section{Sugestão de Trabalhos Futuros}
+
+Durante o desenvolvimento do sistema, foram vistos alguns pontos que podem melhora-lo, e que podem ser usados em trabalhos futuros baseando-se nesse projeto.
+
+Um dos trabalhos que podem ser desenvolvidos foi indicado pelo orientador, que é a possibilidade da associação de perguntas ao vídeo por meio de fluxogramas, permitindo também que esse modelo seja exportado e importado no sistema, para reaproveitamento do curso.
+
+Pode-se criar também um modulo com visualização de dados das atividades pelo professor, por exemplo, um gráfico mostrando qual a questão que os alunos erraram mais, ou qual aluno teve mais dificuldade de responder determinada questão, gerando uma base de dados para o professor em que ele pode usar para criar outras atividades baseando nas deficiências encontradas na anterior.
+
+\begin{sloppypar}
+A ferramenta está usado a classe \textit{LTI\_Data\_Connector\_pdo} para conectar ao banco de dados, mas o \textit{framework laravel} utiliza a interface de conexão chamada \textit{Eloquent}, então uma das sugestões é desenvolver uma classe \textit{LTI\_Data\_Connector\_Eloquent} substituindo as consultas do diretas com o \textit{SQL} pelas consultas do \textit{query builder}.
+\end{sloppypar}
+
+Por fim, no momento só é possível adicionar um vídeo por curso na ferramenta, então um dos trabalhos sugeridos, é a extensão da ferramenta, permitindo adicionar vários vídeos em um só curso, que interagem entre si, como por exemplo, o professor pode definir no curso que caso um aluno erre uma questão especifica, ele será levado a outro vídeo em um tempo pre-definido onde será explicado melhor o assunto em questão.

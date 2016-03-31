@@ -11,17 +11,18 @@
 \imprimircapa
 \imprimirfolhaderosto*
 
-\input{pretextual/fichaCatalografica}
-\input{pretextual/errata}
+% \input{pretextual/fichaCatalografica}
+\includepdf[pages=1,pagecommand={},offset=-2.5cm -3cm]{conteudo/ficha_catalografica.pdf}
+% \input{pretextual/errata}
 \input{pretextual/folhaDeAprovacao}
-\input{pretextual/dedicatoria}
+% \input{pretextual/dedicatoria}
 \input{pretextual/agradecimentos}
-\input{pretextual/epigrafe}
+% \input{pretextual/epigrafe}
 \input{pretextual/resumo}
 \input{pretextual/abstract}
 \input{pretextual/listasAutomaticas}
 \input{pretextual/abreviaturas}
-\input{pretextual/simbolos}
+%\input{pretextual/simbolos}
 \input{pretextual/indiceAutomatico}
 
 \textual
@@ -29,16 +30,16 @@
 \input{conteudo/introducao}
 \input{conteudo/referencialteorico}
 \input{conteudo/desenvolvimento}
-\input{conteudo/elementosdotexto}
-\input{conteudo/elementosdopostexto}
+\input{conteudo/conclusao}
+%\input{conteudo/elementosdopostexto}
 
 \bookmarksetup{startatroot}
 
 \postextual
 
 \bibliography{bibliografia}
-\input{postextual/apendices}
-\input{postextual/anexos}
+%\input{postextual/apendices}
+% \input{postextual/anexos}
 \printindex
 
 \end{document}

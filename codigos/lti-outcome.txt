@@ -1,0 +1,13 @@
+
+<?php
+$lti_outcome = app('LtiOutcome'); //Criando uma nova instância do LTI_Outcome
+$lti_user = app('LtiUser'); // Criando uma instância do LTI_User por meio da sessão
+$lti_resource_link = $lti_user->getResourceLink(); // Recebendo a instância de LTI_Resource_link por meio do lti_user
+
+$lti_outcome->setValue(0.70); // Modificando a nota do aluno
+
+// O método doOutcomesService envia os dados para o TC
+// EXT_WRITE, diz ao método que a ação é de escrita da nota
+// EXT_READ, lê a nota do aluno no TC é retorna ao TP
+$ok = $lti_resource_link->doOutcomesService($lti_resource_link::EXT_WRITE, $lti_outcome, $lti_user);
+

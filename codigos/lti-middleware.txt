@@ -1,0 +1,8 @@
+<?php
+// Todas as rotas dentro do grupo, passaram necessariamente no middleware 'lti'
+$router->group(['middleware' => 'lti'], function($router) {
+    Route::get('cursos/show_all', 'CursosController@showAll');
+    Route::get('cursos/realizarCurso', 'CursosController@realizarCurso');
+    Route::post('cursos/finalizarCurso', 'CursosController@finalizarCurso');
+    Route::resource('cursos', 'CursosController'); // Define todas as rotas REST padrões (POST, PUT, GET, PATCH, DELETE)
+});

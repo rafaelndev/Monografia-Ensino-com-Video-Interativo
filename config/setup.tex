@@ -5,9 +5,9 @@
 		pdftitle={\@title}, 
 		pdfauthor={\@author},
     	pdfsubject={\imprimirpreambulo},
-	    pdfcreator={LaTeX with abnTeX2},
+	    pdfcreator={Criado com ABNTEX2},
 		pdfkeywords={abnt}{latex}{abntex}{abntex2}{trabalho acadêmico}, 
-		colorlinks=true,       		% false: boxed links; true: colored links
+		colorlinks=false,       		% false: boxed links; true: colored links
     	linkcolor=blue,          	% color of internal links
     	citecolor=blue,        		% color of links to bibliography
     	filecolor=magenta,      		% color of file links
@@ -17,6 +17,8 @@
 \makeatother
 
 % Configuração do minted
+\usemintedstyle{bw}
+
 \makeatletter
 \renewenvironment{minted@colorbg}[1]{
   \setlength{\fboxsep}{\z@}
@@ -32,11 +34,12 @@
 % Cor de fundo dos scripts
 \definecolor{codebg}{rgb}{0.97,0.97,0.97}
 
-\def\args{tabsize=4, fontsize=\footnotesize, frame=lines, framesep=5\fboxrule,framerule=1pt,rulecolor=\color{gray!40}}
+\def\args{tabsize=4, frame=lines, framesep=5\fboxrule,framerule=1pt,rulecolor=\color{gray!40},breaklines=true,fontsize=\tiny}
 
 \newcommand{\makenewmintedfiles}[1]{%
     \newmintedfile[jsfile]{javascript}{#1}%
     \newmintedfile[htmlfile]{html}{#1}%
+    \newmintedfile[phpfile]{php}{#1}%
 }
 \expandafter\makenewmintedfiles\expandafter{\args}
 
@@ -47,13 +50,28 @@
 }
 \expandafter\makenewminted\expandafter{\args}
 
-\renewcommand\listoflistingscaption{Lista de Códigos}
-\renewcommand\listingscaption{Código}
+% \renewcommand\listoflistingscaption{Lista de Códigos}
+% \renewcommand\listingscaption{Código}
 
 \setlength{\parindent}{1.5cm}
 \setlength{\parskip}{0.2cm}
-\setlength{\ABNTEXcitacaorecuo}{0.2cm}
+\setlength{\ABNTEXcitacaorecuo}{2cm}
 \makeindex
 
 % Configuração de imagens
 \DeclareGraphicsExtensions{.pdf,.png,.jpg}
+
+% Criar comando quotes
+\newcommand{\quotes}[1]{\lq\lq #1\rq\rq{}}
+
+% Definir todos os captions como centralizados
+\captionsetup{justification=centering}
+
+% Comando para citar com Idem
+\newcommand{\citeidem}[1]{\citeauthoronline{#1}, (idem, \citeyear{#1})}
+
+%\let\underscore\_
+%\renewcommand{\_}{\discretionary{\underscore}{}{\underscore}}
+
+\titlespacing*{\chapter}{1.5pt}{0pt}{0pt}
+\titlespacing*{\section}{0pt}{0pt}{0.2cm}
