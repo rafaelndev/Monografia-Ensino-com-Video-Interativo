@@ -4,4 +4,4 @@ Está monografia com o título **"FERRAMENTA DE VÍDEO INTERATIVO INTEGRADO AOS 
 
 Desenvolvido usando Latex + Minted.
 
-Versão compilada para leitura disponivel no [overleaf](https://www.overleaf.com/read/zcjztpwwppts).
+Versão compilada para leitura disponivel no [overleaf](https://www.overleaf.com/read/zcjztpwwppts). (pode estar desatualizada)
